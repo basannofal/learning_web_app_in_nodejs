@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        
+
+/* body {
+    font-family: 'Alegreya Sans', sans-serif;
+} */
+
+/* Sticky footer position and size
+-------------------------------------------------- */
+html {
+  position: relative;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 300px;
+}
+
+/* Taller footer on small screens */
+@media (max-width: 567em) {
+    body {
+      margin-bottom: 400px;
+    }
+    .footer {
+      height: 300px;
+    }
+}
+
+/* Sticky footer style and color
+-------------------------------------------------- */
+footer {
+  padding-top: 30px;
+  background-color: #292c2f;
+  color: #bbb;
+}
+
+footer a {
+  color: #999;
+  text-decoration:none;
+}
+
+footer a:hover, footer a:focus {
+  color: #aaa;
+  text-decoration:none;
+  border-bottom:1px dotted #999;
+}
+
+footer .form-control {
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
+    color: #d1d2d2;
+    padding: 0.7em 1em;
+}
+
+    </style>
+
+    </head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#" style="font-size: 30px;">Learning Platform</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#corse">corse</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#"></a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <img class="d-block w-100" src="https://source.unsplash.com/1100x400/?study" alt="First slide">
+            </div>
+
+        </div>
+    </div>
+    <div class="corse" id="corse">
+        <h1 class="text-center m-3"
+            style="text-shadow: 3px 3px 3px rgb(85, 83, 83); font-weight: bold; text-decoration: underline;">Our Courses
+        </h1>
+
+        <div class="container">
+
+            <div class="row">
+                <% for(var i=0; i < uw.length; i++) { %>
+                    <a style="color: black; text-decoration: none;"  href="/user-corse?id=<%= uw[i]._id%>">
+                <div class="lg-col-4" style="margin:45px">
+                    <div class="card" style="width: 18rem;">
+                
+                        <img class="card-img-top" src="<%= uw[i].image %>" alt="Card image cap">
+                  
+                        <div class="card-body">
+                            <h5 class="card-title"><%= uw[i].heading %></h5>
+                            <p class="card-text"><%= uw[i].discription %></p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+                <% } %>
+
+
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div id="about">
+        <h1 class="text-center m-3"
+        style="text-shadow: 3px 3px 3px rgb(85, 83, 83); font-weight: bold; text-decoration: underline;">About Us
+    </h1>
+        <div style="width: 40%; margin: auto; text-align: justify;">
+            
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis at veniam necessitatibus nobis? A, doloribus itaque ut possimus nemo ex corporis earum aliquid consequatur repellat! Distinctio aut vel voluptas optio.
+                <br>
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis at veniam necessitatibus nobis? A, doloribus itaque ut possimus nemo ex corporis earum aliquid consequatur repellat! Distinctio aut vel voluptas optio.
+                <br>
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis at veniam necessitatibus nobis? A, doloribus itaque ut possimus nemo ex corporis earum aliquid consequatur repellat! Distinctio aut vel voluptas optio.
+                <br>
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis at veniam necessitatibus nobis? A, doloribus itaque ut possimus nemo ex corporis earum aliquid consequatur repellat! Distinctio aut vel voluptas optio.
+                <br>
+            </p>
+
+        </div>
+    </div>
+
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <h5><i class="fa fa-road"></i> ACME CO INC.</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="">Product</a></li>
+                                <li><a href="">Benefits</a></li>
+                                <li><a href="">Partners</a></li>
+                                <li><a href="">Team</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="">Documentation</a></li>
+                                <li><a href="">Support</a></li>
+                                <li><a href="">Legal Terms</a></li>
+                                <li><a href="">About</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="nav">
+                        <li class="nav-item"><a href="" class="nav-link pl-0"><i class="fa fa-facebook fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-twitter fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-github fa-lg"></i></a></li>
+                        <li class="nav-item"><a href="" class="nav-link"><i class="fa fa-instagram fa-lg"></i></a></li>
+                    </ul>
+                    <br>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="text-md-right">Contact Us</h5>
+                    <hr>
+                </div>
+                <div class="col-md-5">
+                    <form>
+                        <fieldset class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </fieldset>
+                        <fieldset class="form-group">
+                            <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
+                        </fieldset>
+                        <fieldset class="form-group text-xs-right">
+                            <button type="button" class="btn btn-secondary-outline btn-lg">Send</button>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer> -->
+    
+    
+    <!-- credits: https://www.codeply.com/p/EJd6H4Ejyi -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

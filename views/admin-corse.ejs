@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <style>
+       .heading-div{
+           width: 100%;
+           border-bottom: 1px solid black;
+           padding: 20px 10px;
+       } 
+       .disc-div{
+        width: 100%;
+           border-bottom: 1px solid black;
+           padding: 20px 10px 0px 10px;
+           
+
+       }
+       .delete{
+         margin-top: 03%;
+  
+
+       }
+       .delete-span1{
+         border: 1px solid black;
+         padding: 10px;
+         
+        border-radius:  5px 0px 0px 5px  /  5px 0px 0px 5px ;
+        
+       }
+       .delete-span2{
+         border: 1px solid black;
+         padding: 10px;
+         border-radius: 0px 5px 5px 0px / 0px 5px 5px 0px;
+       }
+
+       .delete a{
+         text-decoration: none;
+         color: black;
+         font-size: 1.1rem;
+         
+       }
+       .vedio-div{
+          width: 100%;
+           border-bottom: 1px solid black;
+           padding: 30px 10px;
+           
+        
+       }
+       .com{
+         margin-left: 70%;
+       }
+       .pad{
+         padding: 0px 10px;
+       }
+    </style>
+
+</head>
+  
+  <body>
+
+    <div class="delete ">
+      <span class="com">
+        
+        <a href="/admin-corse-update?id=<%= use._id%>"  class="pad">
+          <span class="delete-span1 bg-primary text-white">
+            Add vedio
+          </span> 
+          <span class="delete-span2">
+            
+            <ion-icon name="add-circle-outline" style="height: 20px; width: 20px; " > </ion-icon>
+          </span>
+        </a>
+    
+
+          <a href="/admin-wellcome/delete/<%= use._id%>" class="pad">
+            <span class="delete-span1 bg-primary text-white">
+              delete course
+            </span> 
+            <span class="delete-span2">
+              
+              <ion-icon name="trash-outline" style="height: 20px; width: 20px; " > </ion-icon>
+            </span>
+          </a>
+        </span>
+    </div>
+      
+
+    <div class="heading-div">
+
+        <h1><%= use.heading %>  </h1>
+    </div>
+
+    <div class="disc-div">
+      <p> <%= use.discription %> </p>
+    </div>
+
+    
+    <div class="row" style="margin-top: 80px; margin-left: 80px;">
+      <% for(var i=0; i < use.sam.length; i++) { %>
+       
+      <div class="col-lg-4" style="padding: 20px;">
+
+    <div class="card" style="width: 18rem;">
+    
+      <video src="<%= use.sam[i].vedio %>" controls></video>
+      <div class="card-body">
+        <h3><%= use.sam[i].head %></h3>
+        <p><%= use.sam[i].disc %></p>
+        
+        <a href="/admin-corse/delete/<%= use.sam[i]._id%>/<%= use._id%>"  class="btn btn-primary my-2">delete</a>
+      </div>
+    </div>
+   </div>
+    </a>
+      <% } %>
+
+    </div>
+
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

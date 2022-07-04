@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+       .heading-div{
+        width: 100%;
+           border-bottom: 1px solid black;
+           padding: 20px 10px;
+       } 
+       .disc-div{
+        width: 100%;
+           border-bottom: 1px solid black;
+           padding: 20px 10px 0px 10px;
+           
+
+       }
+       .delete{
+         margin-top: 03%;
+  
+
+       }
+       .delete-span1{
+         border: 1px solid black;
+         padding: 10px;
+         
+        border-radius:  5px 0px 0px 5px  /  5px 0px 0px 5px ;
+        
+       }
+       .delete-span2{
+         border: 1px solid black;
+         padding: 10px;
+         border-radius: 0px 5px 5px 0px / 0px 5px 5px 0px;
+       }
+
+       .delete a{
+         text-decoration: none;
+         color: black;
+         font-size: 1.1rem;
+         
+       }
+       .vedio-div{
+          width: 100%;
+           border-bottom: 1px solid black;
+           padding: 30px 10px;
+           
+        
+       }
+       .com{
+         margin-left: 70%;
+       }
+       .pad{
+         padding: 0px 10px;
+       }
+    </style>
+
+</head>
+  
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
+      <a class="navbar-brand" href="#" style="font-size: 30px;">Learning Platform</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="user-welcome">Home </a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#corse">corse</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#about">About Us</a>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#"></a>
+                      <a class="dropdown-item" href="#">Another action</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+              </li>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+      </div>
+  </nav>
+      
+
+    <div class="heading-div">
+
+        <h1><%= uc.heading %>  </h1>
+    </div>
+
+    <div class="disc-div">
+      <p> <%= uc.discription %> </p>
+    </div>
+
+    
+    <div class="row" style="margin-top: 80px; margin-left: 80px;">
+      <% for(var i=0; i < uc.sam.length; i++) { %>
+       
+      <div class="col-lg-4" style="padding: 20px;">
+
+    <div class="card" style="width: 18rem;">
+    
+      <video src="<%= uc.sam[i].vedio %>" controls></video>
+      <div class="card-body">
+        <h3><%= uc.sam[i].head %></h3>
+        <p><%= uc.sam[i].disc %></p>
+      </div>
+    </div>
+   </div>
+    </a>
+      <% } %>
+
+    </div>
+
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

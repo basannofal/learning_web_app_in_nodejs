@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin page</title>
+    <link rel="stylesheet" href="/html fils/files/css/style.css">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* html{
+    overflow-x: hidden;
+} */
+
+body{
+    overflow-x: hidden;
+}
+.header{
+    padding: 0 48px;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #86898b;
+    
+    box-shadow: 1px 2px 3px 0px black;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+}
+li{
+    padding: 0 15px;
+}
+
+.navbar-link,
+.navbar-link:visited{
+    display: inline-block;
+    text-decoration: none;
+    font-size: larger;
+    font-weight: 500;
+
+    color: white;
+    text-transform: capitalize;
+}
+
+.navbar-link:hover,
+.navbar-link:active{
+    color: rgb(106, 106, 243);
+    text-shadow: 3px 3px 3px black;
+}
+
+.mobile-nav-btn{
+    display: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.mobile-nav-icon{
+    width: 3rem;
+    height: 3rem;
+    color: black;
+}
+
+.mobile-nav-icon[name="close-outline"]{
+    display: none;
+}
+
+
+@media(max-width:980px){
+    .mobile-nav-btn{
+        display: block;
+        z-index: 99;
+        border: 3px solid black;
+    }
+    
+    .header{
+        position: relative;
+        padding: 0 2rem;
+    }
+    
+    .navbar{
+        width: 100%;
+        height: 100vh;
+        background: #e7e8e9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transform: translateX(100%);
+        transition: all 0.5s linear;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .navbar-list{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .active .navbar{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .active .mobile-nav-btn .mobile-nav-icon[name="close-outline"]{
+        display: block;
+    }
+
+    .active .mobile-nav-btn .mobile-nav-icon[name="menu-outline"]{
+        display: none;
+    }
+}
+
+.first{
+    background-color: #e7e8e9;
+    width: 100%;
+    height: 100vh;
+}
+.corce-heading{
+    text-align: center;
+    padding: 20px;
+    font-size: xx-large;
+    text-shadow: 1px 1px 2px black;
+}
+
+.mini_table{
+    width: 300px;
+    height: 200px;
+    border:1px solid black;
+    border-radius: 10%;
+    margin: auto;
+}
+
+.main-div{
+    width: 300px;
+    height: 200px;
+    border:1px solid black;
+    border-radius: 10%;
+    margin: auto;
+    background-color: lavender;
+    overflow:hidden;
+}
+.main-div .img{
+    height: 80px;
+    overflow: hidden;
+}
+.main-div .heading{
+    height: 20px;
+    font-weight: 600;
+}
+.main-div .discription{
+    height: 20px;
+    font-size: small;
+}
+.oriimg{
+    height: 200px;
+    width: 300px;
+}
+.ad-greet{
+    text-align: center;
+    padding: 50px;
+    font-size: 50px;
+    font-family: fantasy;
+    text-shadow: 2px 2px 2px rgb(167, 92, 92);
+}
+.ad-main{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 24px;
+}
+.ad-form{
+    background-color: wheat;
+    padding: 50px;
+    border-radius: 30px;
+    margin: auto;
+
+}
+.ad-form-in{
+    width: 70%;
+    margin: auto;
+}
+.ad-input{
+    width: 100%;
+    margin-left: 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px black;
+    font-size: 1rem;
+}
+
+.ad-heading{
+    width: 60%;
+    text-transform: capitalize;
+    padding:10px 0px;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.ad-image{
+    width: 30%;
+    margin: 10px 0px 30px 0px;
+    border: 1px solid black;
+}
+
+.ad-btn{
+    background: linear-gradient( to right, rgb(180, 180, 223), rgb(250, 190, 78));
+    
+}
+    </style>
+</head>
+<body>
+
+    <h1 class="ad-greet">Update your form</h1>
+
+    <div class="ad-main">
+
+        <form class="ad-form"  action="/admin-wellcome/update/" method="post" role="form" enctype="multipart/form-data">
+            <div class="ad-form-in">
+
+                <h3 class="ad-heading">
+                    enter corce heading
+            </h3>
+            <input type="hidden" name="id" value="<%= us._id %>">
+
+            <input class="ad-input ad-head" type="text" value="<%= us.heading %>" name="heading" placeholder="enter corce heading">    
+            <h3 class="ad-heading">
+                enter corce discription
+            </h3>
+            <input type="text" value="<%= us.discription %>">
+              
+             </textarea>
+            
+            <h3 class="ad-heading">
+                attach photo
+            </h3>
+            <img src="<%= us.image %>" height="100px" width="100px" alt=""> <br>
+            <input class="ad-input ad-image"  name="image" type="file" >
+            
+            <input class="ad-input ad-btn" type="submit" value="publish your corce">
+            
+        </div>
+        </form>
+    </div>
+</body>
+</html>
